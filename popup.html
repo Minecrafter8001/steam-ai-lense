@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 360px; font: 13px Arial, sans-serif; margin: 12px; }
+    label { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
+    button { width: 100%; padding: 4px; margin-top: 4px; }
+    #status { margin-top: 6px; color: #555; min-height: 1em; }
+    h2 { font-size: 13px; margin: 8px 0 4px; }
+    #list { list-style: none; margin: 0; padding: 0; max-height: 380px; overflow-y: auto; border-top: 1px solid #ddd; }
+    #list li { padding: 6px 0; border-bottom: 1px solid #eee; }
+    #list a { font-weight: bold; color: #1a5fb4; text-decoration: none; }
+    #list a:hover { text-decoration: underline; }
+    .appid { color: #777; font-size: 11px; margin-left: 4px; }
+    .snippet { color: #333; font-size: 12px; margin-top: 2px; }
+    #empty { color: #777; }
+  </style>
+</head>
+<body>
+  <label><input type="checkbox" id="enabled"> Flag AI-disclosed games</label>
+  <label><input type="checkbox" id="crossSiteDetection"> Detect Steam links on other sites</label>
+  <label><input type="checkbox" id="showDisclosure"> Show disclosure text on overlay</label>
+  <label title="When a disclosure has several paragraphs, show ones with sentences starting 'Generative AI' (or similar) first"><input type="checkbox" id="smartPriority"> Smart prioritisation of disclosure text</label>
+  <button id="clear">Clear cache</button>
+  <div id="status"></div>
+  <h2>Flagged apps (<span id="count">0</span>)</h2>
+  <ul id="list"></ul>
+  <div id="empty">No flagged apps yet.</div>
+  <script src="disclosure.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

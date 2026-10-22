@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Steam AI Lens",
+  "version": "0.4.4",
+  "description": "Flags Steam store links whose store page contains an AI Generated Content Disclosure.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://store.steampowered.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["disclosure.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Steam AI Lens",
+    "default_popup": "popup.html"
+  }
+}

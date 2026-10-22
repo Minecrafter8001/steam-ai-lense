@@ -1,0 +1,98 @@
+.sads-pill {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: #d32f2f;
+  color: #fff !important;
+  font: bold 11px/1.4 Arial, sans-serif !important;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.sads-pill--overlay {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  margin: 0;
+  z-index: 2147483647;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.sads-flag img {
+  outline: 2px solid #d32f2f;
+  outline-offset: -2px;
+}
+
+.sads-snippet {
+  display: none;
+  margin-left: 6px;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+.sads-show-disclosure .sads-snippet {
+  display: inline;
+}
+
+.sads-show-disclosure .sads-pill {
+  max-width: 320px;
+  white-space: normal;
+  text-align: left;
+}
+
+.sads-show-disclosure .sads-pill--overlay {
+  right: 4px;
+  max-width: none;
+  max-height: calc(100% - 8px);
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: 10px !important;
+  pointer-events: auto;
+}
+
+/* opacity rather than visibility so the pill keeps receiving pointer events */
+.sads-pill.sads-pill--hovered {
+  opacity: 0;
+}
+
+.sads-pill.sads-pill--row {
+  display: block;
+  max-width: none;
+  margin: 2px 0 6px;
+  padding: 3px 8px;
+  white-space: normal;
+  text-align: left;
+}
+
+/* Follow Steam's own hiding of ignored/excluded/owned/wishlisted items. */
+.ds_ignored + .sads-pill--row,
+.ds_excluded_by_preferences + .sads-pill--row,
+.search_results.hide_owned .ds_owned + .sads-pill--row,
+.search_results.hide_wishlist .ds_wishlist + .sads-pill--row,
+.ds_ignored .sads-pill,
+.ds_excluded_by_preferences .sads-pill {
+  display: none !important;
+}
+
+.sads-panel {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  max-width: 480px;
+  max-height: calc(100vh - 8px);
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  background: #d32f2f;
+  color: #fff;
+  font: 12px/1.45 Arial, sans-serif;
+  white-space: pre-line;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
